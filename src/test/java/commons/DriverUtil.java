@@ -13,8 +13,8 @@ public class DriverUtil {
 
     //region Browser Actions
     public static void openBrowser() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
         CHOSEN_BROWSER = Browser.CHROME;
     }
 
