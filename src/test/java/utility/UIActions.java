@@ -1,6 +1,6 @@
 package utility;
 
-import commons.DriverUtil;
+import commons.BrowserUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +19,7 @@ public  class UIActions {
     private static StandByUntil standByUntil;
 
     public UIActions() {
-        driver = DriverUtil.getDriver();
+        driver = BrowserUtil.getDriver();
         wait = new WebDriverWait(driver, WAIT_TIME);
         standByUntil = new StandByUntil(wait);
     }
@@ -162,6 +162,7 @@ public  class UIActions {
 
     public void click(By locator) {
         try{
+            highlight(locator);
             WebElement element = standByUntil.elementIsClickable(locator);
             element.click();
         }catch (Exception ex) {
@@ -194,6 +195,7 @@ public  class UIActions {
 
 
     public void doubleClick(By locator) {
+        highlight(locator);
         new Actions(driver)
                 .doubleClick(standByUntil.elementIsClickable(locator))
                 .build()
@@ -307,7 +309,7 @@ public  class UIActions {
 
 
     public void write(By locator, String text) {
-
+        highlight(locator);
 //        waitUntilElementVisible(locator).sendKeys(text);
         standByUntil.elementIsThereAndVisibleToUser(locator).sendKeys(text);
     }

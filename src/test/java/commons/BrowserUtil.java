@@ -6,16 +6,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class DriverUtil {
+public class BrowserUtil {
 
     private static WebDriver driver;
     private static String CHOSEN_BROWSER="";
 
     //region Browser Actions
     public static void openBrowser() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         CHOSEN_BROWSER = Browser.CHROME;
+        driver.manage().window().maximize();
     }
 
     public static void openBrowser(String browserType) {

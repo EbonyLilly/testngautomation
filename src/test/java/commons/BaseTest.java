@@ -9,11 +9,11 @@ public abstract class BaseTest {
     public void beforeEachTestCase() {
 //        String choseBrowser = System.getProperty("browser");
 //        DriverUtil.openBrowser(choseBrowser);
-        DriverUtil.openBrowser();
+        BrowserUtil.openBrowser();
     }
 
     @AfterMethod
     public void afterEachTestCase() {
-        DriverUtil.closeBrowser();
+        BrowserUtil.closeBrowser();
     }
 }

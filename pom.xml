@@ -9,6 +9,11 @@
     <artifactId>testngautomation</artifactId>
     <version>1.0.0</version>
 
+    <!-- Project Compiler Configuration -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <!-- Project Depends Follwoing External Libraries -->
     <dependencies>
